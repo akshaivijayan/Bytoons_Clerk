@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Form Autofill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Cinzel:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="landing">
+    <div class="orb-layer" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <main class="landing-wrap">
+      <div class="landing-center">
+        <div class="landing-title magic-title-text">BYTOONS CLERK</div>
+        <div class="landing-box">
+          <input type="file" id="pdfFile" accept="application/pdf" />
+          <div class="magic-upload" role="button" tabindex="0" aria-label="Select a PDF to upload">
+            <div class="magic-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 3h7l4 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M9 12h6M9 15h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="magic-text">
+              <div class="magic-title">Summon the PDF</div>
+              <div class="magic-subtitle">Bring your form to life</div>
+            </div>
+          </div>
+          <button id="fillBtn" class="button cta" disabled>Fill The Form</button>
+        </div>
+        <div id="message" class="message" aria-live="polite"></div>
+      </div>
+    </main>
+
+    <script src="bg.js"></script>
+    <script src="upload.js"></script>
+  </body>
+</html>

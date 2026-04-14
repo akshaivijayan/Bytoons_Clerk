@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Form Autofill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="orb-layer" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+    </div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <main class="container">
+      <header class="hero">
+        <div class="hero-content">
+          <a class="back-link" href="/">&larr; Back to upload</a>
+          <span class="badge">Dynamic PDF Autofill</span>
+          <h1>Fill your uploaded PDF in seconds.</h1>
+          <p class="subhead">
+            The left side lists every extracted field. The right side contains a JSON
+            template you can edit before generating a clean, flattened PDF.
+          </p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <span class="label">Step</span>
+            <span class="value">2 / 2</span>
+          </div>
+          <div class="hero-card-top">
+            <span class="label">Status</span>
+            <span class="value" id="statusText">Ready</span>
+          </div>
+          <div class="progress">
+            <div class="progress-bar" style="width: 100%"></div>
+          </div>
+          <p class="hint">Edit JSON, then export a clean PDF.</p>
+        </div>
+      </header>
+
+      <section class="grid two-col">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <h2>Extracted Fields</h2>
+              <p class="panel-subtitle">Search and copy field names easily.</p>
+            </div>
+            <button id="loadFields" class="button secondary">Reload Fields</button>
+          </div>
+          <input id="fieldSearch" class="input" placeholder="Search fields..." />
+          <div class="field-list" id="fieldList"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <h2>JSON Template</h2>
+              <p class="panel-subtitle">Update values and generate a filled PDF.</p>
+            </div>
+            <div class="panel-actions">
+              <button id="loadTemplate" class="button secondary">Reload Template</button>
+              <div class="toggle">
+                <input type="checkbox" id="flatten" checked />
+                <label for="flatten">Flatten output</label>
+              </div>
+            </div>
+          </div>
+          <textarea id="jsonInput" class="textarea" rows="18">{}</textarea>
+          <div class="actions">
+            <button id="fillBtn" class="button">Generate Filled PDF</button>
+            <button id="clearBtn" class="button ghost">Clear</button>
+          </div>
+          <div id="message" class="message" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="bg.js"></script>
+    <script src="fill.js"></script>
+  </body>
+</html>
